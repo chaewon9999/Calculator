@@ -25,7 +25,7 @@ public class CalculatorMain {
                 continue;
             }
 
-            scanner.nextLine();
+            scanner.nextLine(); //줄바꿈
 
             /**연산기호 입력**/
             System.out.print("원하는 연산 기호를 입력하세요(+, -, *, /) : ");
@@ -47,13 +47,20 @@ public class CalculatorMain {
 
             /**연산 결과 반환**/
             System.out.println("계산 결과: " + result);
-            System.out.println("re || exit : ");
-            String choice = scanner.nextLine();
-            if (choice.toLowerCase().equals("exit")) {
-                System.out.println("계산기를 종료합니다.");
-                break;
+
+            /**re or exit**/
+            while (true) {
+                System.out.println("re || exit : ");
+                String choice = scanner.nextLine();
+                if (choice.toLowerCase().equals("re")) {
+                  break;
+                } else if (choice.toLowerCase().equals("exit")) {
+                    System.out.println("계산기를 종료합니다.");
+                    return;
+                } else {
+                    System.out.println("잘못된 입력입니다");
+                }
             }
         }
-
     }
 }
