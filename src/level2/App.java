@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
+        Calculator calculator = new Calculator();
         Scanner sc = new Scanner(System.in);
-        int result = 0;
 
         while (true) {
             /**첫 번째 숫자 입력**/
@@ -25,29 +25,23 @@ public class App {
                 continue;
             }
 
-            sc.nextLine(); //줄바꿈
+            sc.nextLine();
 
             /**연산기호 입력**/
             System.out.print("사칙 연산 기호를 입력하세요(+, -, *, /) : ");
             char operator = sc.next().charAt(0);
 
-            /**연산 검증**/
-            if (operator == '+') {
-                result = num1 + num2;
-            } else if (operator == '-') {
-                result = num1 - num2;
-            } else if (operator == '*') {
-                result = num1 * num2;
-            } else if (operator == '/' && num2 != 0) {
-                result = num1 / num2;
-            } else {
-                System.out.println("잘못된 계산입니다");
-                continue;
-            }
+            /**연산 후 결과 반환**/
+            int result = calculator.calculate(num1, num2, operator);
+            calculator.setResult(result);
+            calculator.getResult();
 
-            /**연산 결과 반환**/
-            System.out.println("계산 결과: " + result);
             sc.nextLine();
+
+            /**리스트의 크기가 5보다 커지면 가장 먼저 저장된 데이터 삭제**/
+            if (calculator.getResultList().size() > 5) {
+                calculator.removeResult();
+            }
 
             /**exit를 입력 받으면 종료**/
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
