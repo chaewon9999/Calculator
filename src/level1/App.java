@@ -11,16 +11,16 @@ public class App {
         while (true) {
             /**첫 번째 숫자 입력**/
             System.out.print("첫 번째 숫자를 입력하세요: ");
-            int firstNum = sc.nextInt();
-            if (firstNum < 0) {
+            int num1 = sc.nextInt();
+            if (num1 < 0) {
                 System.out.println("잘못된 숫자입니다.");
                 continue;
             }
 
             /**두 번째 숫자 입력**/
             System.out.print("두 번째 숫자를 입력하세요: ");
-            int secondNum = sc.nextInt();
-            if (secondNum < 0) {
+            int num2 = sc.nextInt();
+            if (num2 < 0) {
                 System.out.println("잘못된 숫자입니다.");
                 continue;
             }
@@ -33,13 +33,13 @@ public class App {
 
             /**연산 검증**/
             if (operator == '+') {
-                result = firstNum + secondNum;
+                result = num1 + num2;
             } else if (operator == '-') {
-                result = firstNum - secondNum;
+                result = num1 - num2;
             } else if (operator == '*') {
-                result = firstNum * secondNum;
-            } else if (operator == '/' && secondNum != 0) {
-                result = firstNum / secondNum;
+                result = num1 * num2;
+            } else if (operator == '/' && num2 != 0) {
+                result = num1 / num2;
             } else {
                 System.out.println("잘못된 계산입니다");
                 continue;
