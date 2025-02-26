@@ -12,16 +12,14 @@ public class App {
             /**첫 번째 숫자 입력**/
             System.out.print("첫 번째 숫자를 입력하세요: ");
             int num1 = sc.nextInt();
-            if (num1 < 0) {
-                System.out.println("잘못된 숫자입니다.");
+            if (!calculator.isPlus(num1)) {
                 continue;
             }
 
             /**두 번째 숫자 입력**/
             System.out.print("두 번째 숫자를 입력하세요: ");
             int num2 = sc.nextInt();
-            if (num2 < 0) {
-                System.out.println("잘못된 숫자입니다.");
+            if (!calculator.isPlus(num2)) {
                 continue;
             }
 

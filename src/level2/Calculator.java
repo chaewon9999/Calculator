@@ -41,4 +41,12 @@ public class Calculator {
     public void removeResult() {
         resultList.remove(0);
     }
+
+    public boolean isPlus(int num) {
+        if (num < 0) {
+            System.out.println("잘못된 숫자입니다.");
+            return false;
+        }
+        return true;
+    }
 }
