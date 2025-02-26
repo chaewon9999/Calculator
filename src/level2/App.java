@@ -28,17 +28,17 @@ public class App {
             scanner.nextLine(); //줄바꿈
 
             /**연산기호 입력**/
-            System.out.print("원하는 연산 기호를 입력하세요(+, -, *, /) : ");
-            String symbol = scanner.nextLine();
+            System.out.print("사칙 연산 기호를 입력하세요(+, -, *, /) : ");
+            char operator = scanner.next().charAt(0);
 
             /**연산 검증**/
-            if (symbol.equals("+")) {
+            if (operator == '+') {
                 result = firstNum + secondNum;
-            } else if (symbol.equals("-")) {
+            } else if (operator == '-') {
                 result = firstNum - secondNum;
-            } else if (symbol.equals("*")) {
+            } else if (operator == '*') {
                 result = firstNum * secondNum;
-            } else if (symbol.equals("/") && secondNum != 0) {
+            } else if (operator == '/' && secondNum != 0) {
                 result = firstNum / secondNum;
             } else {
                 System.out.println("잘못된 계산입니다");
@@ -47,20 +47,16 @@ public class App {
 
             /**연산 결과 반환**/
             System.out.println("계산 결과: " + result);
+            scanner.nextLine();
 
-            /**re or exit**/
-            while (true) {
-                System.out.println("re || exit : ");
-                String choice = scanner.nextLine();
-                if (choice.toLowerCase().equals("re")) {
-                  break;
-                } else if (choice.toLowerCase().equals("exit")) {
-                    System.out.println("계산기를 종료합니다.");
-                    return;
-                } else {
-                    System.out.println("잘못된 입력입니다");
-                }
+            /**exit를 입력 받으면 종료**/
+            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
+            String choice = scanner.nextLine();
+            if (choice.toLowerCase().equals("exit")) {
+                System.out.println("계산기를 종료합니다.");
+                return;
             }
+
         }
     }
 }
