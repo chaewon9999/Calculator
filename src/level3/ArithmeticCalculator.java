@@ -41,6 +41,7 @@ public class ArithmeticCalculator<T extends Double> {
                 result = num1.doubleValue() / num2.doubleValue();
             } catch (ArithmeticException e) {
                 System.out.println(e.getMessage());
+                result = 0.0;
                 return;
             }
         }
