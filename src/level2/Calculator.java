@@ -7,7 +7,7 @@ public class Calculator {
     private List<Integer> resultList = new ArrayList<>();
     private int result;
 
-    //연산 로직
+    /**연산 로직**/
     public int calculate(int num1, int num2, char operate) {
         if (operate == '+') {
             result =  num1 + num2;
@@ -34,7 +34,7 @@ public class Calculator {
         return resultList;
     }
 
-    //resultList의 0번째 인덱스 값 삭제
+    /**resultList의 0번째 인덱스 값 삭제**/
     public void removeResult() {
         resultList.remove(0);
     }

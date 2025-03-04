@@ -23,7 +23,7 @@ public class ArithmeticCalculator<T extends Double> {
         this.num2 = num2;
     }
 
-    //연산 로직
+    /** 연산 로직 **/
     public void calculate(char operation) {
         if (operation == add) {
             result = num1.doubleValue() + num2.doubleValue();
@@ -51,7 +51,7 @@ public class ArithmeticCalculator<T extends Double> {
         return result;
     }
 
-    //연산 결과보다 큰 수들 리스트에서 반환
+    /**연산 결과보다 큰 수들 리스트에서 반환**/
     public void getLargeResult() {
         System.out.println("지금까지의 연산 중 현재 연산 결과보다 큰 수: ");
         numList.stream()
@@ -59,7 +59,7 @@ public class ArithmeticCalculator<T extends Double> {
                 .forEach(System.out::println);
     }
 
-    //계산을 계속 수행할지 확인하는 로직
+    /**계산을 계속 수행할지 확인하는 로직**/
     public boolean shouldContinue(String answer) {
         if (answer.equals("exit")) {
             System.out.println("계산기를 종료합니다.");
