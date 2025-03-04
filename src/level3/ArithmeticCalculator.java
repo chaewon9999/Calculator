@@ -2,7 +2,6 @@ package level3;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class ArithmeticCalculator<T extends Double> {
     private List<T> numList = new ArrayList<>();
