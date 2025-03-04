@@ -46,9 +46,9 @@ public class ArithmeticCalculator<T extends Double> {
         numList.add((T)result);
     }
 
-    public Double getResult() {
+    public T getResult() {
         System.out.print("연산 결과: ");
-        return result;
+        return (T) result;
     }
 
     /**연산 결과보다 큰 수들 리스트에서 반환**/
