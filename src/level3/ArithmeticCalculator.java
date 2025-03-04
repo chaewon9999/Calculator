@@ -1,6 +1,7 @@
 package level3;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 public class ArithmeticCalculator<T extends Double> {
@@ -47,6 +48,7 @@ public class ArithmeticCalculator<T extends Double> {
     }
 
     public T getResult() {
+        result = 0.0;
         System.out.print("연산 결과: ");
         return (T) result;
     }
