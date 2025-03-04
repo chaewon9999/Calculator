@@ -48,7 +48,6 @@ public class ArithmeticCalculator<T extends Double> {
     }
 
     public T getResult() {
-        result = 0.0;
         System.out.print("연산 결과: ");
         return (T) result;
     }
